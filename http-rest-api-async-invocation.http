@@ -1,0 +1,42 @@
+## Variables
+
+@hostname = localhost
+@port = 8088
+@host = {{hostname}}:{{port}}
+@contentType = application/json
+
+### UUID in Body
+POST /uuid-body HTTP/1.1
+Host: {{host}}
+Content-Type: {{contentType}}
+
+{
+    "name": "santi"
+}
+
+
+### UUID in Location header
+POST /location-header HTTP/1.1
+Host: {{host}}
+Content-Type: {{contentType}}
+
+{
+    "name": "santi"
+}
+
+
+### Check UUID
+@uuid = ca93288d-860d-43dc-a302-022a7bef9c6a
+GET /check?uuid={{uuid}} HTTP/1.1
+Host: {{host}}
+
+
+### Push callback
+POST /push HTTP/1.1
+Host: {{host}}
+Content-Type: {{contentType}}
+
+{
+    "name": "santi",
+    "urlCallback": "http://test.com/status"
+}
