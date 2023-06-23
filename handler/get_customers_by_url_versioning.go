@@ -8,7 +8,7 @@ import (
 	"github.com/google/jsonapi"
 )
 
-// getAllCustomersUrlV1 returns version 1 of customers
+// getAllCustomersByUrlV1 returns version 1 of customers
 func (h *Handler) getAllCustomersByUrlV1(w http.ResponseWriter, r *http.Request) {
 	jsonapiRuntime := jsonapi.NewRuntime().Instrument("customers.list")
 
@@ -27,7 +27,7 @@ func (h *Handler) getAllCustomersByUrlV1(w http.ResponseWriter, r *http.Request)
 	}
 }
 
-// getAllCustomersUrlV2 returns version 2 of customers
+// getAllCustomersByUrlV2 returns version 2 of customers
 func (h *Handler) getAllCustomersByUrlV2(w http.ResponseWriter, r *http.Request) {
 	jsonapiRuntime := jsonapi.NewRuntime().Instrument("customers.list")
 

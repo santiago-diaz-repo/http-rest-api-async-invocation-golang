@@ -9,7 +9,7 @@ import (
 	"github.com/google/jsonapi"
 )
 
-// getAllCustomersByHeaderAccept returns version 1 and 2 of customers depends on the version sent by Accept header
+// getAllCustomersByAcceptAccept returns version 1 and 2 of customers depends on the version sent by Accept header
 func (h *Handler) getAllCustomersByAcceptAccept(w http.ResponseWriter, r *http.Request) {
 	jsonapiRuntime := jsonapi.NewRuntime().Instrument("customers.list")
 
