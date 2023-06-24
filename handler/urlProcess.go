@@ -1,23 +1,22 @@
 package handler
 
 import (
+	"github.com/google/jsonapi"
 	v1 "http-rest-api-versioning-golang/data/v1"
 	v2 "http-rest-api-versioning-golang/data/v2"
 	"net/http"
-
-	"github.com/google/jsonapi"
 )
 
-// getAllCustomersByUrlV1 returns version 1 of customers
-func (h *Handler) getAllCustomersByUrlV1(w http.ResponseWriter, r *http.Request) {
+// getAllCustomersUrlV1 returns version 1 of customers
+func (h *Handler) getAllCustomersUrlV1(w http.ResponseWriter, r *http.Request){
 	jsonapiRuntime := jsonapi.NewRuntime().Instrument("customers.list")
 
-	if r.Method != http.MethodGet {
-		http.Error(w, "unsuported method", http.StatusMethodNotAllowed)
+	if r.Method != http.MethodGet{
+		http.Error(w, "Only GET", http.StatusMethodNotAllowed)
 		return
 	}
 
-	data := v1.NewLoansManagerV1()
+	data := v1.NewData()
 	loans := data.GetLoans()
 
 	w.Header().Set(headerContentType, applicationJson)
@@ -27,16 +26,16 @@ func (h *Handler) getAllCustomersByUrlV1(w http.ResponseWriter, r *http.Request)
 	}
 }
 
-// getAllCustomersByUrlV2 returns version 2 of customers
-func (h *Handler) getAllCustomersByUrlV2(w http.ResponseWriter, r *http.Request) {
+// getAllCustomersUrlV2 returns version 2 of customers
+func (h *Handler) getAllCustomersUrlV2(w http.ResponseWriter, r *http.Request){
 	jsonapiRuntime := jsonapi.NewRuntime().Instrument("customers.list")
 
-	if r.Method != http.MethodGet {
-		http.Error(w, "unsuported method", http.StatusMethodNotAllowed)
+	if r.Method != http.MethodGet{
+		http.Error(w, "Only GET", http.StatusMethodNotAllowed)
 		return
 	}
 
-	data := v2.NewLoansManagerV2()
+	data := v2.NewData()
 	loans := data.GetLoans()
 
 	w.Header().Set(headerContentType, applicationJson)
