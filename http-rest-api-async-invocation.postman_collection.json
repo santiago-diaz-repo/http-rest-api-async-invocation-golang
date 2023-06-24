@@ -1,0 +1,118 @@
+{
+	"info": {
+		"_postman_id": "ce582e9b-64d8-4a26-a060-f728b48b8f85",
+		"name": "http-rest-api-async-invocation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "uuid-body",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"santi\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/uuid-body",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"uuid-body"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "check-uuid",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/check?uuid=b389c4ad-6735-48ef-96c0-234ba0239aa3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"check"
+					],
+					"query": [
+						{
+							"key": "uuid",
+							"value": "b389c4ad-6735-48ef-96c0-234ba0239aa3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "location-header",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"santi\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/location-header",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"location-header"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "push-callback",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"santi\",\n    \"urlCallback\": \"http://test.com/status\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/push",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"push"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
