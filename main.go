@@ -1,10 +1,7 @@
 package main
 
-import (
-	"http-rest-api-versioning-golang/handler"
-)
+import "http-rest-api-async-invocation-golang/handlers"
 
-func main() {
-	exampleHandler := &handler.Handler{}
-	exampleHandler.HandleRequest()
+func main()  {
+	handlers.HandleRequests()
 }

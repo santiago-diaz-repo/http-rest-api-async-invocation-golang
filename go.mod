@@ -1,5 +1,5 @@
-module http-rest-api-versioning-golang
+module http-rest-api-async-invocation-golang
 
-go 1.16
+go 1.19
 
-require github.com/google/jsonapi v1.0.0 // indirect
+require github.com/google/uuid v1.2.0 
